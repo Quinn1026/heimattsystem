@@ -19,13 +19,14 @@
 
 <script>
 import { apiLogin } from '@/api/login'
+import { setToken } from '@/utils/mytoken'
 export default {
   name: 'Login',
   data () {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       rules: {
         username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
@@ -51,6 +52,8 @@ export default {
         const res = await apiLogin(this.loginForm)
         console.log(res)
         if (res.data.meta.status === 200) {
+          setToken('ems', res.data.data.token)
+          this.$store.commit('setUserInfo', res.data.data)
           this.$router.push('/layout')
           this.$message({
             message: '恭喜你，登陆成功',

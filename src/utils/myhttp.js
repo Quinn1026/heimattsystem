@@ -1,11 +1,16 @@
 import Vue from 'vue'
 // 导入axios 并封装
 import axios from 'axios'
+import { getToken } from './mytoken'
 
 axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'
 
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
+  const token = getToken('ems')
+  if (token) {
+    config.headers.Authorization = token
+  }
   // 在发送请求之前做些什么
   return config
 }, function (error) {
