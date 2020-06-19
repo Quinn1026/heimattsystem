@@ -77,7 +77,6 @@ export default {
   align-items: center;
   .login-card {
     width: 500px;
-    height: 100%;
     margin: 50px auto;
     h2 {
       margin-top: 20px;

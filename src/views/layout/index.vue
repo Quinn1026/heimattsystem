@@ -1,7 +1,13 @@
 <template>
   <div class="layout">
     <el-container class="layout-contain">
-    <el-header>黑马电商后台管理系统</el-header>
+    <el-header>
+      <div class="title">黑马电商后台管理系统</div>
+      <div class="right">
+        <span> {{$store.state.userInfo.username}} 欢迎你~~~ </span>
+        <el-button type="primary" @click="logout">退出</el-button>
+      </div>
+    </el-header>
     <el-container>
       <el-aside width="200px">
         <el-menu
@@ -83,7 +89,11 @@
 
 <script>
 export default {
-
+  methods: {
+    logout () {
+      console.log('退出')
+    }
+  }
 }
 </script>
 
@@ -94,11 +104,23 @@ export default {
   .layout-contain {
     height: 100%;
     .el-header {
-      background-color: #B3C0D1;
-      text-align: center;
       line-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        font-size: 24px;
+        color: #333;
+        margin-left: 10px;
+      }
+      .right {
+        span {
+          margin-right: 20px;
+        }
+      }
     }
     .el-aside {
+      height: 100%;
       .el-menu {
         border: 0;
       }
@@ -112,6 +134,7 @@ export default {
       }
     }
     .el-main {
+      height: 100%;
       background-color: #e9eef3;
     }
   }
