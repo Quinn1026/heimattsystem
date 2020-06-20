@@ -62,7 +62,7 @@
               <i class="el-icon-location"></i>
               <span>订单管理</span>
             </template>
-            <el-menu-item index="4-1">
+            <el-menu-item index="/layout/orders">
               <i class="el-icon-menu"></i>
               <span>订单列表</span>
             </el-menu-item>
