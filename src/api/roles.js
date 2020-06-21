@@ -25,3 +25,18 @@ export function apiDelRole (id) {
     url: `roles/${id}`
   })
 }
+// 权限列表
+export function apiAssignList (type) {
+  return axios({
+    method: 'get',
+    url: `rights/${type}`
+  })
+}
+// 角色授权
+export function apiRoleAssign (roleId, rids) {
+  return axios({
+    method: 'post',
+    url: `roles/${roleId}/rights`,
+    data: { rids }
+  })
+}

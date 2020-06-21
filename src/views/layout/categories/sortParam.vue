@@ -1,6 +1,6 @@
 <template>
-  <div class="categories">
-    我是商品管理页面
+  <div class="sort-param">
+    分类参数
   </div>
 </template>
 

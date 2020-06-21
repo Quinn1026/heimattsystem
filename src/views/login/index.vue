@@ -52,7 +52,7 @@ export default {
         const res = await apiLogin(this.loginForm)
         console.log(res)
         if (res.data.meta.status === 200) {
-          setToken('ems', res.data.data.token)
+          setToken('info', res.data.data)
           this.$store.commit('setUserInfo', res.data.data)
           this.$router.push('/layout')
           this.$message({

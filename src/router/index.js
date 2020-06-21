@@ -9,7 +9,10 @@ import Users from '@/views/layout/users'
 import RoleList from '@/views/layout/rights/roleList'
 import Permission from '@/views/layout/rights/permission'
 // 商品管理 categories
-import Categories from '@/views/layout/categories'
+import GoodsList from '@/views/layout/categories/goodsList'
+import GoodsAdd from '@/views/layout/categories/goodsAdd'
+import GoodsSort from '@/views/layout/categories/goodsSort'
+import SortParam from '@/views/layout/categories/sortParam'
 // 订单管理 orders
 import Orders from '@/views/layout/orders'
 // 数据统计 reports
@@ -49,8 +52,20 @@ const routes = [
         component: Permission
       },
       {
-        path: 'categories',
-        component: Categories
+        path: 'goodsList',
+        component: GoodsList
+      },
+      {
+        path: 'goodsAdd',
+        component: GoodsAdd
+      },
+      {
+        path: 'goodsSort',
+        component: GoodsSort
+      },
+      {
+        path: 'sortParam',
+        component: SortParam
       },
       {
         path: 'orders',

@@ -11,7 +11,7 @@
     <el-container>
       <el-aside width="200px">
         <el-menu
-          default-active="/layout/users"
+          :default-active="defaultActive"
           class="el-menu-vertical-demo"
           :router="true"
         >
@@ -44,15 +44,15 @@
               <i class="el-icon-location"></i>
               <span>商品管理</span>
             </template>
-            <el-menu-item index="3-1">
+            <el-menu-item index="/layout/goodsList">
               <i class="el-icon-menu"></i>
               <span>商品列表</span>
             </el-menu-item>
-            <el-menu-item index="3-2">
+            <el-menu-item index="/layout/sortParam">
               <i class="el-icon-menu"></i>
               <span>分类参数</span>
             </el-menu-item>
-            <el-menu-item index="3-3">
+            <el-menu-item index="/layout/goodsSort">
               <i class="el-icon-menu"></i>
               <span>商品分类</span>
             </el-menu-item>
@@ -89,10 +89,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+      defaultActive: '/layout/users'
+    }
+  },
   methods: {
     logout () {
       console.log('退出')
     }
+  },
+  created () {
+    this.defaultActive = this.$route.fullPath
   }
 }
 </script>
